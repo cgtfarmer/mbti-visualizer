@@ -1,0 +1,22 @@
+
+What if they start with the preferences and there's 3 cards per row, and 1 row for each preference row on the chart
+	Ex: I, E, Unsure
+
+After completing that section, it'll reveal the functions section. Whatever guesses can be extrapolated about the functions from the preferences will have a DOTTED OUTLINE show up around the given function
+
+The idea is that, in the end, all the user's selections should line up and they can help validate that visually
+
+After making all their selections, they can hit a submit button or something and it'll validate the selections and highlight incompatible selections and try to define why they're in conflict with one another
+
+# -----------------------------------------------------------------------------
+
+Clicks I, E disables
+clicks N, S disables
+etc.
+
+Clicks Si ("Primary" label shows up), Se disables, Ni disables, Ne ("Secondary" label shows up")
+	Mirror this with the 2 judging functions
+
+WAIT!! Make every choice propagate through the whole thing, so the whole system can be easily visualized
+
+

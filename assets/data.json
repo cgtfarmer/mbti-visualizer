@@ -1,0 +1,200 @@
+{
+	"cognitivePreferences" : [
+		{
+			"name": "Introvert", 
+			"abbreviation": "I",
+			"traits": [
+				"Inner/self-focus",
+				"More independent-minded",
+				"More cautious, conservative, and discriminating; 'look before they leap'; rely heavily on forethought (especially IJs)",
+				"Prefer a slower, quieter, reflective life",
+				"More easily overwhelmed by external stimuli",
+				"Feel somewhat alien, uncomfortable, or inadequate in the world",
+				"Often less talkative (especially ISPs)",
+				"More self-reflective and self-aware",
+				"Require more time to themselves"
+			]
+		},
+
+		{
+			"name": "Extravert", 
+			"abbreviation": "E",
+			"traits": [
+				"Outer/world-focus",
+				"More collective-minded",
+				"'Act now, think later' (especially EPs); more assertive and risk-tolerant",
+				"Enjoy a busier, 'on the go' lifestyle",
+				"Less concerned with being harmed or overwhelmed by the world",
+				"Feel rather at home in the world",
+				"Often more talkative (especially ENJs)",
+				"More world-reflective and world-aware",
+				"Require less time to themselves"
+			]
+		},
+
+		{
+			"name": "Sensing", 
+			"abbreviation": "S",
+			"traits": [
+				"Caught up in living life, they may forget to reflect on it (especially ESPs)",
+				"Generally prefer and are at their best with practical, concrete activities",
+				"Excel in handling details and daily affairs",
+				"Lovers of new sights, tastes, and sensations (SPs) or routines and traditions (SJs)",
+				"More concerned with the facts, details, or particulars than the connections between them",
+				"Most effective on the back end of the creative process, with enacting and implementing"
+			]
+		},
+
+		{
+			"name": "Intuition", 
+			"abbreviation": "N",
+			"traits": [
+				"Often lost in thought, their minds are 'somewhere else'",
+				"May struggle to attend to the concrete details of daily life (especially INJs and ENPs)",
+				"Prefer to deal in theoretical, imaginative, or speculative realms; love working with ideas",
+				"Enjoy contemplating abstract patterns, connections, and languages, be they verbal, mathematical, or computer-based",
+				"More interested in the connections between things (especially abstract things) than in the things themselves",
+				"Most effective on the front end of the creative process, while generating ideas or insights"
+			]
+		},
+
+		{
+			"name": "Thinking", 
+			"abbreviation": "T",
+			"traits": [
+				"Take a logic-based approach to reasoning and decision-making",
+				"Focus on matters of logic, strategy, logistics, utility, functionality, and classification; strive to make things more useful, rational, and efficient. More readily detach from their emotions to make decisions in an impersonal fashion",
+				"Less concerned with the needs and feelings of others",
+				"Focus more on their own work and interests"
+			]
+		},
+
+		{
+			"name": "Feeling", 
+			"abbreviation": "F",
+			"traits": [
+				"Consult tastes and feelings in reasoning and decision-making",
+				"Enrich life with colors, sounds, tastes, scents, textures, stories, images, etc.",
+				"More attuned and responsive to feelings, both their own and those of others",
+				"Generally more caring, compassionate, and nurturing",
+				"More apt to divide time among work, relationships, and/or caregiving"
+			]
+		},
+
+		{
+			"name": "Judging", 
+			"abbreviation": "J",
+			"traits": [
+				"Outwardly firm, direct, and opinionated",
+				"Undeterred from directly expressing their views or wishes (especially EJs); utilize declarative statements",
+				"Tone and mannerisms convey a sense of closure, seriousness, or formalness",
+				"Others may turn to them for answers or decision-making",
+				"See planning as a way of reducing risk and ensuring desirable outcomes",
+				"Experience and express convergence in beliefs / worldview",
+				"More apt to prefer structure and predictability in work settings",
+				"Prefer 'traditional' methods of teaching and learning, such as lectures or direct instruction",
+				"Not necessarily neat, tidy, organized, uptight, or punctual",
+				"Less restless and less dependent on a breadth of activities for stimulation (especially IJs)"
+			]
+		},
+
+		{
+			"name": "Perceiving", 
+			"abbreviation": "P",
+			"traits": [
+				"Outwardly open, receptive and adaptable",
+				"Can be reluctant to state things directly (especially IPs); may express themselves in a more tangential fashion (e.g., using hints or questions)",
+				"Are typically unenthusiastic about making detailed plans, especially when involving other people; enjoy an uncertainty of leaving things open-ended",
+				"Slow to reach closure in beliefs or decisions",
+				"Often viewed as good, non-judgmental listeners",
+				"Can be skeptical toward external laws; prefer to make and follow their own rules",
+				"Desire variety, novelty, informality, and minimal structure at work",
+				"Often prefer to teach themselves (especially IPs); teach others by example or facilitation",
+				"Not necessarily messy, disorganized, procrastinating, or chronically late",
+				"Often restless, turning to a breadth of activities for stimulation (especially EPs)"
+			]
+		}
+	],
+	
+	"cognitiveFunctions": [
+		{
+			"name": "Introverted Sensing",
+			"abbreviation": "S(i)",
+			"preferences": "SJ",
+			"primary-roles": "To retain, condense, and recollect information; to consult past experiences, routines, and traditions; to perceive inner bodily sensations",
+			"most-prominent-in": "ISTJs & ISFJs; also prominent in ESTJs & ESFJs",
+			"associated-with": "Routines, habits, valuing and preserving 'the tried and true,' material conservativism, high regard for traditions and authority",
+			"famous-examples": "Dick Cheney, Martin Luther, Mother Theresa, George H.W. Bush"
+		},
+
+		{
+			"name": "Extraverted Sensing",
+			"abbreviation": "S(e)",
+			"preferences": "SP",
+			"primary-roles": "To perceive and mediate prompt responses to external details and events; to seek a breadth of novel sensory experiences; to physically interact with the world.",
+			"most-prominent-in": "ESTPs & ESFPs; also prominent in ISTPs & ISFPs",
+			"associated-with": "Sensation-seeking, kinesthetic intelligence, an 'eye for detail,' attunement to style and appearances, hands-on activities, effortless performance.",
+			"famous-examples": "George W. Bush, Lebron James, Beyonce, Shakira, Donald Trump"
+		},
+
+		{
+			"name": "Introverted Intuition",
+			"abbreviation": "N(i)",
+			"preferences": "NJ",
+			"primary-roles": "To collect conscious and subconscious information, then synthesize it to produce impressions, insights, answers, and theories; to see deep causes, patterns, and laws underlying sense data",
+			"most-prominent-in": "INTJs & INFJs; also prominent in ENTJs & ENFJs",
+			"associated-with": "Deep perceptiveness and insight, deep 'knowing,' theoretical genius, powers of analysis and focus, advising and troubleshooting",
+			"famous-examples": "Plato, Jesus, Nietszsche, Jung, Steven Hawking"
+		},
+
+		{
+			"name": "Extraverted Intuition",
+			"abbreviation": "N(e)",
+			"preferences": "NP",
+			"primary-roles": "To broadly explore, synthesize, and express ideas, associations, and possibilities",
+			"most-prominent-in": "Most prominent in: ENTPs & ENFPs; also prominent in INTPs & INFPs",
+			"associated-with": "Brainstorming, innovative / artistic / ideational creativity, divergent thinking, holistic / web-like associations, a nose for promising new enterprises",
+			"famous-examples": "Benjamin Franklin, Walt Disney, Steve Jobs, Ellen DeGeneres, Jon Stewart, John Edward"
+		},
+
+		{
+			"name": "Introverted Thinking",
+			"abbreviation": "T(i)",
+			"preferences": "TP",
+			"primary-roles": "To examine practical or conceptual issues using deep, implicit, and nuanced logic; to develop and refine subjective methods, strategies, or concepts.",
+			"most-prominent-in": "Most prominent in: INTPs & ISTPs. Also prominent in ENTPs & ESTPs",
+			"associated-with": "Deep skepticism, tacit logic, self-regulation and self-optimization, personal independence and autonomy",
+			"famous-examples": "Einstein, Bill Gates, Henri Bergson, Robert Pirsig, Robert Nozick, Ken Wilber, Lance Armstrong"
+		},
+
+		{
+			"name": "Extraverted Thinking",
+			"abbreviation": "T(e)",
+			"preferences": "TJ",
+			"primary-roles": "To succinctly express logic-based judgments; to understand or render systems and operations more rational, efficient, and effective",
+			"most-prominent-in": "Most prominent in: ENTJs & ESTJs; also prominent in INTJs & ISTJs",
+			"associated-with": "Explicit logic, precise and pointed expressions, bureaucracy and 'red tape,' quantitative methods ('Show me the numbers!')",
+			"famous-examples": "Henry Ford, Bill O'Reily"
+		},
+
+		{
+			"name": "Introverted Feeling",
+			"abbreviation": "F(i)",
+			"preferences": "FP",
+			"primary-roles": "Primary Roles: To explore and refine personal tastes, feelings, and values, contributing to a strong sense of personal uniqueness; to maintain inner emotional and moral order; to emotionally invest in a limited number of persons, animals, or interests.",
+			"most-prominent-in": "Most prominent in: INFPs & ISFPs; also prominent in ENFPs & ESFPs",
+			"associated-with": "Fighting for 'underdogs,' emotional restraint, nuanced morals and values, nurture and caregiving, sensitivity to perceived inequities and injustice",
+			"famous-examples": "Henry David Thoreau, Jean-Jacque Rousseau, Kierkegaard, Camus, Virginia Wolfe, Van Gogh, Luke Skywalker, J.D. Salinger, Jane Austen, Bob Dylan"
+		},
+
+		{
+			"name": "Extraverted Feeling",
+			"abbreviation": "F(e)",
+			"preferences": "FJ",
+			"primary-roles": "Primary Roles: To survey a breadth of human emotions, values, and morals, striving toward interpersonal or group consensus; to directly express feelings and judgments; to instruct or motivate others toward growth and excellence",
+			"most-prominent-in": "Most prominent in: ENFJs & ESFJs; also prominent in INFJs & ISFJs",
+			"associated-with": "An interpersonal focus, emotional expressiveness, communication skills, talkativeness, attunement to social norms, advice-giving",
+			"famous-examples": "Dr. Martin Luther King, Dr. Phil McGraw, Frasier Crane (television)"
+		}
+	]
+}

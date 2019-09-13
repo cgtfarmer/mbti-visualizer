@@ -12,25 +12,72 @@
 			<h1>MBTI Visualizer</h1>
 		</header>
 
-		<section id="page-preferences">
+		<header id="overview-banner">
+			<h2>Overview</h2>
+		</header>
+
+		<div id="preferences-overview">
+			<h3><span>I</span> - <span>E</span></h3>
+			<h3><span>S</span> - <span>N</span></h3>
+			<h3><span>T</span> - <span>F</span></h3>
+			<h3><span>J</span> - <span>P</span></h3>
+		</div>
+
+		<div id="functions-overview">
+			<h3><span>S(i)</span> - <span>S(e)</span> - <span>N(i)</span> - <span>N(e)</span></h3>
+			<h3><span>T(i)</span> - <span>T(e)</span> - <span>F(i)</span> - <span>F(e)</span></h3>
+		</div>
+
+		<div id="ordering-overview">
+			<ol>
+				<li ng-repeat="item in functionOrder">
+					<p>{{ item }}</p>
+				</li>
+			</ol>
+		</div>
+
+		</section>
+
+		<header id="cognitive-preferences-banner">
 			<h2>Cognitive Preferences</h2>
-		</section>
+		</header>
 
-		<section id="page-functions">
+		<div id="preference-{{ preference.abbreviation }}" class="preference-card" ng-repeat="preference in data.cognitivePreferences" ng-click="makePreferenceSelection($event)">
+			<h2>{{ preference.name }} - ({{ preference.abbreviation }})</h2>
+			<ul>
+				<li ng-repeat="trait in preference.traits">
+					<p>{{ trait }}</p>
+				</li>
+			</ul>
+		</div>
+
+		<header id="cognitive-functions-banner">
 			<h2>Cognitive Functions</h2>
-		</section>
+		</header>
 
-		<section id="page-ordering">
+		<div id="function-{{ function.preferences }}" class="function-card" ng-repeat="function in data.cognitiveFunctions" ng-click="makeFunctionSelection($event)">
+			<h2>{{ function.name }} - {{ function.abbreviation }}</h2>
+			<ul>
+				<!-- <li><p>{{ function.preferences }}</p></li> -->
+				<li><p>{{ function["primary-roles"] }}</p></li>
+				<!-- <li><p>{{ function["most-prominent-in"] }}</p></li> -->
+				<li><p>{{ function["associated-with"] }}</p></li>
+				<!-- <li><p>{{ function["famous-examples"] }}</p></li> -->
+			</ul>
+		</div>
+
+		<!-- <section id="page-ordering">
 		</section>
 
 		<section id="page-help">
-		</section>
+		</section> -->
 
 		<footer id="page-footer">
 			<p>&copy; 2019 Christian Farmer, All Rights Reserved</p>
 		</footer>
 
 		<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/angular-1.7.8.min.js"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
 
 	</body>

@@ -181,17 +181,17 @@
 			"name": "Introverted Feeling",
 			"abbreviation": "F(i)",
 			"preferences": "FP",
-			"primary-roles": "Primary Roles: To explore and refine personal tastes, feelings, and values, contributing to a strong sense of personal uniqueness; to maintain inner emotional and moral order; to emotionally invest in a limited number of persons, animals, or interests.",
-			"most-prominent-in": "Most prominent in: INFPs & ISFPs; also prominent in ENFPs & ESFPs",
-			"associated-with": "Fighting for 'underdogs,' emotional restraint, nuanced morals and values, nurture and caregiving, sensitivity to perceived inequities and injustice",
-			"famous-examples": "Henry David Thoreau, Jean-Jacque Rousseau, Kierkegaard, Camus, Virginia Wolfe, Van Gogh, Luke Skywalker, J.D. Salinger, Jane Austen, Bob Dylan"
-		},
+				"primary-roles": "To explore and refine personal tastes, feelings, and values, contributing to a strong sense of personal uniqueness; to maintain inner emotional and moral order; to emotionally invest in a limited number of persons, animals, or interests.",
+				"most-prominent-in": "Most prominent in: INFPs & ISFPs; also prominent in ENFPs & ESFPs",
+				"associated-with": "Fighting for 'underdogs,' emotional restraint, nuanced morals and values, nurture and caregiving, sensitivity to perceived inequities and injustice",
+				"famous-examples": "Henry David Thoreau, Jean-Jacque Rousseau, Kierkegaard, Camus, Virginia Wolfe, Van Gogh, Luke Skywalker, J.D. Salinger, Jane Austen, Bob Dylan"
+			},
 
-		{
-			"name": "Extraverted Feeling",
-			"abbreviation": "F(e)",
-			"preferences": "FJ",
-			"primary-roles": "Primary Roles: To survey a breadth of human emotions, values, and morals, striving toward interpersonal or group consensus; to directly express feelings and judgments; to instruct or motivate others toward growth and excellence",
+			{
+				"name": "Extraverted Feeling",
+				"abbreviation": "F(e)",
+				"preferences": "FJ",
+				"primary-roles": "To survey a breadth of human emotions, values, and morals, striving toward interpersonal or group consensus; to directly express feelings and judgments; to instruct or motivate others toward growth and excellence",
 			"most-prominent-in": "Most prominent in: ENFJs & ESFJs; also prominent in INFJs & ISFJs",
 			"associated-with": "An interpersonal focus, emotional expressiveness, communication skills, talkativeness, attunement to social norms, advice-giving",
 			"famous-examples": "Dr. Martin Luther King, Dr. Phil McGraw, Frasier Crane (television)"

@@ -22,9 +22,9 @@ var functionRules = [
 
 app.controller('myCtrl', function($scope, $http) {
 //
-	$scope.preferences = [];
-	$scope.functions = [];
-	$scope.functionOrder = [];
+	$scope.preferences = ["I", "N", "T", "J"];
+	$scope.functions = ["Ni", "Se", "Te", "Fi"];
+	$scope.functionOrder = ["Ni", "Te", "Fi", "Se"];
 
 	$http.get("assets/data.json",
 		{
@@ -109,7 +109,64 @@ app.controller('myCtrl', function($scope, $http) {
 		return;
 	}
 
+	updateUiState($scope.preferences);
+
 });
+
+// function updateUiState(preferences, functions, functionOrder) {
+function updateUiState(preferences) {
+	// $scope.preferences = ["I", "N", "T", "J"];
+	// $scope.functions = ["Ni", "Se", "Te", "Fi"];
+	// $scope.functionOrder = ["Ni", "Te", "Fi", "Se"];
+
+	// var preferenceGroups = [
+		// ["preference-I", "preference-E"],
+		// ["preference-S", "preference-N"],
+		// ["preference-T", "preference-F"],
+		// ["preference-J", "preference-P"]
+	// ]
+	//
+	// var functionGroups = [
+		// ["function-SJ", "function-SP", "function-NJ", "function-NP"],
+		// ["function-TP", "function-TJ", "function-FP", "function-FJ"],
+	// ]
+
+	if(contains(preferences, "S") && contains(preferences, "J")) {
+		$("preference-S").addClass("selected");
+		$("preference-J").addClass("selected");
+
+		$("preference-N").removeClass("selected");
+		$("preference-P").removeClass("selected");
+	} else if(contains(preferences, "S") && contains(preferences, "P")) {
+		$("preference-S").addClass("selected");
+		$("preference-P").addClass("selected");
+
+		$("preference-N").removeClass("selected");
+		$("preference-J").removeClass("selected");
+	} else if(contains(preferences, "N") && contains(preferences, "J")) {
+		$("preference-N").addClass("selected");
+		$("preference-J").addClass("selected");
+
+		$("preference-S").removeClass("selected");
+		$("preference-P").removeClass("selected");
+	} else if(contains(preferences, "N") && contains(preferences, "P")) {
+		$("preference-N").addClass("selected");
+		$("preference-P").addClass("selected");
+
+		$("preference-S").removeClass("selected");
+		$("preference-J").removeClass("selected");
+	}
+
+	return;
+}
+
+function contains(collection, item) {
+	if(collection.indexOf(item) != -1) {
+		return true;
+	}
+
+	return false;
+}
 
 function getRelevantRule(index) {
 	for(let rule of functionRules) {
@@ -229,12 +286,4 @@ function getRelevantRule(index) {
 // function buildFunctions(functions) {
 	// return;
 // }
-
-function initInputsToCorrectState() {
-	$("#chord-type-options input:first").prop("checked", "true");
-	$("#mode-options input:first").prop("checked", "true");
-	$("#key-options input").prop("checked", "");
-	$("#key-options input:first").prop("checked", "true");
-	return;
-}
 

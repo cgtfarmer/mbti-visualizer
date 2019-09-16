@@ -19,4 +19,9 @@ Clicks Si ("Primary" label shows up), Se disables, Ni disables, Ne ("Secondary" 
 
 WAIT!! Make every choice propagate through the whole thing, so the whole system can be easily visualized
 
+# =============================================================================
+
+1. Get all the stuff initializing to the correct state based on those scope variables
+
+2. Get the UI clicks and whatnot modifying those scope variables appropriately (handling the constraints and whatnot)
 

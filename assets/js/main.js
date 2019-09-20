@@ -8,9 +8,11 @@ var preferenceGroups = [
 	["preference-J", "preference-P"]
 ]
 
+var cognitiveFunctions = ["Si", "Se", "Ni", "Ne", "Ti", "Te", "Fi", "Fe"];
+
 var functionGroups = [
-	["function-SJ", "function-SP", "function-NJ", "function-NP"],
-	["function-TP", "function-TJ", "function-FP", "function-FJ"],
+	["function-Si", "function-Se", "function-Ni", "function-Ne"],
+	["function-Ti", "function-Te", "function-Fi", "function-Fe"],
 ]
 
 var functionRules = [
@@ -52,110 +54,282 @@ app.controller('myCtrl', function($scope, $http) {
 		return;
 	}
 
-	$scope.makePreferenceSelection = function(event) {
-		console.log(event.currentTarget.id);
-		var selection = event.currentTarget.id;
+	$scope.updateState = function(event) {
+		var selection = event.currentTarget.id
+		console.log("Selection: " + selection);
 
-		$("#" + selection).toggleClass("selected");
+		var changed;
+		if(selection.indexOf("preference") != -1) {
+			console.log("Chose a preference\n");
+			console.log("Current preferences:");
+			console.log($scope.preferences);
+
+			changed = $scope.makePreferenceSelection(selection);
+			if(changed) {
+				$scope.propagatePreferenceSelections();
+			}
+		} else {
+			console.log("Chose a function");
+			changed = $scope.makeFunctionSelection(selection);
+			if(changed) {
+				$scope.propagateFunctionSelections();
+			}
+		}
+
+		if(changed) {
+			$scope.updateUi();
+		}
+		return;
+	}
+
+	$scope.propagatePreferenceSelections = function() {
+		return;
+	}
+
+	$scope.propagateFunctionSelections = function() {
+		return;
+	}
+
+	$scope.makePreferenceSelection = function(selection) {
+		/*
+			# Algorithm
+			Go through each row
+				If the row contains the selection,
+					Delete every entry from the preferences which does not match the selection
+
+			After going through each entry in the row, add the selection to the
+		*/
+		console.log("\nMaking preference selection...");
+
+		if($scope.preferences.indexOf(selection.slice(selection.length-1)) != -1) {
+			console.log("Selection already exists, exiting...");
+			return false;
+		}
+
+		// $("#" + selection).toggleClass("selected");
 		for(let group of preferenceGroups) {
-			var index = group.indexOf(selection);
-			if(index != -1) {
+			console.log(group);
+			var indexOfSelection = group.indexOf(selection);
+			// console.log("Index: " + index);
+			if(indexOfSelection != -1) {
+				console.log("Exists in this group. Continuing...");
 				for(let i = 0; i < group.length; i++) {
-					if(i == index) {
-						// $("#" + selection).toggleClass("selected");
-						continue;
+					if(i != indexOfSelection ) {
+						// console.log("thing2");
+						// $("#" + group[i]).removeClass("selected");
+						let removalItem = group[i].slice(selection.length-1);
+						console.log("Removing item: " + removalItem);
+						let indexOfRemovalItem = $scope.preferences.indexOf(removalItem);
+						$scope.preferences.splice(indexOfRemovalItem, 1);
 					}
-
-					$("#" + group[i]).removeClass("selected");
 				}
+
+				let additionItem = selection.slice(selection.length-1);
+				console.log("Addition item: " + additionItem);
+				$scope.preferences.push(additionItem);
+			} else {
+				console.log("Does not exist in this group. Skipping...");
 			}
 		}
+	//
+		return true;
+	}
+
+	$scope.makeFunctionSelection = function(selection) {
+		/*
+			# Algorithm
+			Find the row which contains the selection
+				Find the rule which does not contain the selection
+					Delete every entry which appears in the rule from the functions pool
+
+				Find the other rule which contains the selection
+					Add every entry which appears in the rule to the functions pool
+
+		*/
+		console.log("\nMaking function selection...");
+
+		if($scope.functions.indexOf(selection.slice(selection.length-2)) != -1) {
+			console.log("Selection already exists, exiting...");
+			return false;
+		}
+
+	//
+		// $("#" + selection).toggleClass("selected");
+		var functionGroup = findBelongingFunctionGroup(selection);
+
+			console.log("Exists in this group. Continuing...");
+			for(let i = 0; i < group.length; i++) {
+				if(i != indexOfSelection ) {
+					// console.log("thing2");
+					// $("#" + group[i]).removeClass("selected");
+					let removalItem = group[i].slice(selection.length-2);
+					console.log("Removing item: " + removalItem);
+					let indexOfRemovalItem = $scope.functions.indexOf(removalItem);
+					$scope.functions.splice(indexOfRemovalItem, 1);
+				}
+			}
+
+			let additionItem = selection.slice(selection.length-2);
+			console.log("Addition item: " + additionItem);
+			$scope.functions.push(additionItem);
+	//
+		return true;
+	}
+
+	$scope.updateUi = function() {
+		console.log("Updating UI according to preferences:");
+		console.log($scope.preferences);
+
+		updateUiPreferences($scope.preferences);
+
+		console.log("Updating UI according to functions:");
+		console.log($scope.functions);
+
+		updateUiFunctions($scope.functions);
+		// updateUiFunctionOrder($scope.functionOrder); // ???
+
+
+		// if(contains($scope.preferences, "S") && contains($scope.preferences, "J")) {
+			// $("#preference-S").addClass("selected");
+			// $("#preference-J").addClass("selected");
+//
+			// $("#preference-N").removeClass("selected");
+			// $("#preference-P").removeClass("selected");
+		// } else if(contains($scope.preferences, "S") && contains($scope.preferences, "P")) {
+			// $("#preference-S").addClass("selected");
+			// $("#preference-P").addClass("selected");
+//
+			// $("#preference-N").removeClass("selected");
+			// $("#preference-J").removeClass("selected");
+		// } else if(contains($scope.preferences, "N") && contains($scope.preferences, "J")) {
+			// $("#preference-N").addClass("selected");
+			// $("#preference-J").addClass("selected");
+//
+			// $("#preference-S").removeClass("selected");
+			// $("#preference-P").removeClass("selected");
+		// } else if(contains($scope.preferences, "N") && contains($scope.preferences, "P")) {
+			// $("#preference-N").addClass("selected");
+			// $("#preference-P").addClass("selected");
+//
+			// $("#preference-S").removeClass("selected");
+			// $("#preference-J").removeClass("selected");
+		// }
 
 		return;
 	}
-
-	$scope.makeFunctionSelection = function(event) {
-	/*
-		# Algorithm:
-		# --------------------------------------
-		find the row where the selection exists
-		find the index
-		find the function rule where the index exists
-		iterate through the group row and turn all the rule numbers on, and switch off all numbers which are not in the rules
-	*/
-
-		// console.log(event.currentTarget.id);
-		var selection = event.currentTarget.id;
-
-		for(let group of functionGroups) {
-			var index = group.indexOf(selection);
-			if(index != -1) {
-				var rule = getRelevantRule(index);
-				// console.log(rule);
-
-				for(let i = 0; i < group.length; i++) {
-					// console.log(i);
-					if(rule.indexOf(i) != -1) {
-						// console.log("selecting");
-						$("#" + group[i]).toggleClass("selected");
-					} else {
-						// console.log("de-selecting");
-						$("#" + group[i]).removeClass("selected");
-					}
-				}
-			}
-		}
-
-		return;
-	}
-
-	updateUiState($scope.preferences);
 
 });
 
-// function updateUiState(preferences, functions, functionOrder) {
-function updateUiState(preferences) {
-	// $scope.preferences = ["I", "N", "T", "J"];
-	// $scope.functions = ["Ni", "Se", "Te", "Fi"];
-	// $scope.functionOrder = ["Ni", "Te", "Fi", "Se"];
-
-	// var preferenceGroups = [
-		// ["preference-I", "preference-E"],
-		// ["preference-S", "preference-N"],
-		// ["preference-T", "preference-F"],
-		// ["preference-J", "preference-P"]
-	// ]
-	//
-	// var functionGroups = [
-		// ["function-SJ", "function-SP", "function-NJ", "function-NP"],
-		// ["function-TP", "function-TJ", "function-FP", "function-FJ"],
-	// ]
-
-	if(contains(preferences, "S") && contains(preferences, "J")) {
-		$("preference-S").addClass("selected");
-		$("preference-J").addClass("selected");
-
-		$("preference-N").removeClass("selected");
-		$("preference-P").removeClass("selected");
-	} else if(contains(preferences, "S") && contains(preferences, "P")) {
-		$("preference-S").addClass("selected");
-		$("preference-P").addClass("selected");
-
-		$("preference-N").removeClass("selected");
-		$("preference-J").removeClass("selected");
-	} else if(contains(preferences, "N") && contains(preferences, "J")) {
-		$("preference-N").addClass("selected");
-		$("preference-J").addClass("selected");
-
-		$("preference-S").removeClass("selected");
-		$("preference-P").removeClass("selected");
-	} else if(contains(preferences, "N") && contains(preferences, "P")) {
-		$("preference-N").addClass("selected");
-		$("preference-P").addClass("selected");
-
-		$("preference-S").removeClass("selected");
-		$("preference-J").removeClass("selected");
+function findBelongingFunctionGroup() {
+	for(let group of functionGroups) {
+		// console.log(group);
+		var indexOfSelection = group.indexOf(selection);
+		// console.log("Index: " + index);
+		if(indexOfSelection != -1) {
+			return group;
+		}
 	}
+
+	return false;
+}
+
+
+// function makeFunctionSelection(selection) {
+// /*
+	// # Algorithm:
+	// # --------------------------------------
+	// find the row where the selection exists
+	// find the index
+	// find the function rule where the index exists
+	// iterate through the group row and turn all the rule numbers on, and switch off all numbers which are not in the rules
+// */
+//
+	// for(let group of functionGroups) {
+		// var index = group.indexOf(selection);
+		// if(index != -1) {
+			// var rule = getRelevantRule(index);
+			// // console.log(rule);
+// //
+			// for(let i = 0; i < group.length; i++) {
+				// // console.log(i);
+				// if(rule.indexOf(i) != -1) {
+					// // console.log("selecting");
+					// $("#" + group[i]).toggleClass("selected");
+				// } else {
+					// // console.log("de-selecting");
+					// $("#" + group[i]).removeClass("selected");
+				// }
+			// }
+		// }
+	// }
+// //
+	// return;
+// }
+
+
+function updateUiFunctions(functions) {
+	// $scope.functions = ["Ni", "Se", "Te", "Fi"];
+	clearUiFunctions();
+
+	if(contains(functions, "Si") || contains(functions, "Ne")) {
+		$("#function-Si").addClass("selected");
+		$("#function-Ne").addClass("selected");
+	} else {
+		$("#function-Se").addClass("selected");
+		$("#function-Ni").addClass("selected");
+	}
+
+	if(contains(functions, "Ti") || contains(functions, "Fe")) {
+		$("#function-Ti").addClass("selected");
+		$("#function-Fe").addClass("selected");
+	} else {
+		$("#function-Te").addClass("selected");
+		$("#function-Fi").addClass("selected");
+	}
+
+	return;
+}
+
+function clearUiFunctions() {
+	for(let entry of cognitiveFunctions) {
+		$("#function-" + entry).removeClass("selected");
+	}
+	return;
+}
+
+function updateUiPreferences(preferences) {
+	if(contains(preferences, "I")) {
+		$("#preference-I").addClass("selected");
+		$("#preference-E").removeClass("selected");
+	} else {
+		$("#preference-E").addClass("selected");
+		$("#preference-I").removeClass("selected");
+	}
+
+	if(contains(preferences, "S")) {
+		$("#preference-S").addClass("selected");
+		$("#preference-N").removeClass("selected");
+	} else {
+		$("#preference-N").addClass("selected");
+		$("#preference-S").removeClass("selected");
+	}
+
+	if(contains(preferences, "T")) {
+		$("#preference-T").addClass("selected");
+		$("#preference-F").removeClass("selected");
+	} else {
+		$("#preference-F").addClass("selected");
+		$("#preference-T").removeClass("selected");
+	}
+
+	if(contains(preferences, "J")) {
+		$("#preference-J").addClass("selected");
+		$("#preference-P").removeClass("selected");
+	} else {
+		$("#preference-P").addClass("selected");
+		$("#preference-J").removeClass("selected");
+	}
+
 
 	return;
 }

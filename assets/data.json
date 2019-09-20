@@ -120,6 +120,7 @@
 		{
 			"name": "Introverted Sensing",
 			"abbreviation": "S(i)",
+			"abbreviationClean": "Si",
 			"preferences": "SJ",
 			"primary-roles": "To retain, condense, and recollect information; to consult past experiences, routines, and traditions; to perceive inner bodily sensations",
 			"most-prominent-in": "ISTJs & ISFJs; also prominent in ESTJs & ESFJs",
@@ -130,6 +131,7 @@
 		{
 			"name": "Extraverted Sensing",
 			"abbreviation": "S(e)",
+			"abbreviationClean": "Se",
 			"preferences": "SP",
 			"primary-roles": "To perceive and mediate prompt responses to external details and events; to seek a breadth of novel sensory experiences; to physically interact with the world.",
 			"most-prominent-in": "ESTPs & ESFPs; also prominent in ISTPs & ISFPs",
@@ -140,6 +142,7 @@
 		{
 			"name": "Introverted Intuition",
 			"abbreviation": "N(i)",
+			"abbreviationClean": "Ni",
 			"preferences": "NJ",
 			"primary-roles": "To collect conscious and subconscious information, then synthesize it to produce impressions, insights, answers, and theories; to see deep causes, patterns, and laws underlying sense data",
 			"most-prominent-in": "INTJs & INFJs; also prominent in ENTJs & ENFJs",
@@ -150,6 +153,7 @@
 		{
 			"name": "Extraverted Intuition",
 			"abbreviation": "N(e)",
+			"abbreviationClean": "Ne",
 			"preferences": "NP",
 			"primary-roles": "To broadly explore, synthesize, and express ideas, associations, and possibilities",
 			"most-prominent-in": "Most prominent in: ENTPs & ENFPs; also prominent in INTPs & INFPs",
@@ -160,6 +164,7 @@
 		{
 			"name": "Introverted Thinking",
 			"abbreviation": "T(i)",
+			"abbreviationClean": "Ti",
 			"preferences": "TP",
 			"primary-roles": "To examine practical or conceptual issues using deep, implicit, and nuanced logic; to develop and refine subjective methods, strategies, or concepts.",
 			"most-prominent-in": "Most prominent in: INTPs & ISTPs. Also prominent in ENTPs & ESTPs",
@@ -170,6 +175,7 @@
 		{
 			"name": "Extraverted Thinking",
 			"abbreviation": "T(e)",
+			"abbreviationClean": "Te",
 			"preferences": "TJ",
 			"primary-roles": "To succinctly express logic-based judgments; to understand or render systems and operations more rational, efficient, and effective",
 			"most-prominent-in": "Most prominent in: ENTJs & ESTJs; also prominent in INTJs & ISTJs",
@@ -180,6 +186,7 @@
 		{
 			"name": "Introverted Feeling",
 			"abbreviation": "F(i)",
+			"abbreviationClean": "Fi",
 			"preferences": "FP",
 				"primary-roles": "To explore and refine personal tastes, feelings, and values, contributing to a strong sense of personal uniqueness; to maintain inner emotional and moral order; to emotionally invest in a limited number of persons, animals, or interests.",
 				"most-prominent-in": "Most prominent in: INFPs & ISFPs; also prominent in ENFPs & ESFPs",
@@ -190,6 +197,7 @@
 			{
 				"name": "Extraverted Feeling",
 				"abbreviation": "F(e)",
+				"abbreviationClean": "Fe",
 				"preferences": "FJ",
 				"primary-roles": "To survey a breadth of human emotions, values, and morals, striving toward interpersonal or group consensus; to directly express feelings and judgments; to instruct or motivate others toward growth and excellence",
 			"most-prominent-in": "Most prominent in: ENFJs & ESFJs; also prominent in INFJs & ISFJs",

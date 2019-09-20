@@ -70,6 +70,9 @@ app.controller('myCtrl', function($scope, $http) {
 			}
 		} else {
 			console.log("Chose a function");
+			console.log("Current functions:");
+			console.log($scope.functions);
+
 			changed = $scope.makeFunctionSelection(selection);
 			if(changed) {
 				$scope.propagateFunctionSelections();
@@ -137,12 +140,13 @@ app.controller('myCtrl', function($scope, $http) {
 
 	$scope.makeFunctionSelection = function(selection) {
 		/*
-			# Algorithm
-			Find the row which contains the selection
-				Find the rule which does not contain the selection
-					Delete every entry which appears in the rule from the functions pool
 
-				Find the other rule which contains the selection
+		# Algorithm
+		Find the row which contains the selection
+			Go through the rules
+				If the rule does not contain the selection
+					Delete every entry which appears in the rule from the functions pool
+				Else
 					Add every entry which appears in the rule to the functions pool
 
 		*/
@@ -153,25 +157,54 @@ app.controller('myCtrl', function($scope, $http) {
 			return false;
 		}
 
-	//
-		// $("#" + selection).toggleClass("selected");
 		var functionGroup = findBelongingFunctionGroup(selection);
 
-			console.log("Exists in this group. Continuing...");
-			for(let i = 0; i < group.length; i++) {
-				if(i != indexOfSelection ) {
-					// console.log("thing2");
-					// $("#" + group[i]).removeClass("selected");
-					let removalItem = group[i].slice(selection.length-2);
-					console.log("Removing item: " + removalItem);
-					let indexOfRemovalItem = $scope.functions.indexOf(removalItem);
-					$scope.functions.splice(indexOfRemovalItem, 1);
-				}
-			}
+		for(let rule of functionRules) {
+			var function1 = functionGroup[rule[0]]
+			var function2 = functionGroup[rule[1]]
+			console.log("F1: " + function1);
+			console.log("F2: " + function2);
+			if(function1 == selection || function2 == selection) {
+				console.log("ADDING");
+				$scope.functions.push(function1.slice(function1.length-2));
+				$scope.functions.push(function2.slice(function1.length-2));
+			} else {
+				console.log("REMOVING");
+				let removalIndex1 = $scope.functions.indexOf(function1.slice(function1.length-2))
+				let removalIndex2 = $scope.functions.indexOf(function2.slice(function2.length-2))
+				console.log("Index1: " + removalIndex1);
+				console.log("Index2: " + removalIndex2);
 
-			let additionItem = selection.slice(selection.length-2);
-			console.log("Addition item: " + additionItem);
-			$scope.functions.push(additionItem);
+				console.log("Functions before removal");
+				console.log($scope.functions);
+
+				if(removalIndex1 > removalIndex2) {
+					$scope.functions.splice(removalIndex1, 1);
+					$scope.functions.splice(removalIndex2, 1);
+				} else {
+					$scope.functions.splice(removalIndex2, 1);
+					$scope.functions.splice(removalIndex1, 1);
+				}
+
+				console.log("Functions after removal");
+				console.log($scope.functions);
+			}
+		}
+
+		// for(let i = 0; i < group.length; i++) {
+			// if(i != indexOfSelection ) {
+				// // console.log("thing2");
+				// // $("#" + group[i]).removeClass("selected");
+				// let removalItem = group[i].slice(selection.length-2);
+				// console.log("Removing item: " + removalItem);
+				// let indexOfRemovalItem = $scope.functions.indexOf(removalItem);
+				// $scope.functions.splice(indexOfRemovalItem, 1);
+			// }
+		// }
+//
+		// let additionItem = selection.slice(selection.length-2);
+		// console.log("Addition item: " + additionItem);
+		// $scope.functions.push(additionItem);
 	//
 		return true;
 	}
@@ -220,7 +253,7 @@ app.controller('myCtrl', function($scope, $http) {
 
 });
 
-function findBelongingFunctionGroup() {
+function findBelongingFunctionGroup(selection) {
 	for(let group of functionGroups) {
 		// console.log(group);
 		var indexOfSelection = group.indexOf(selection);

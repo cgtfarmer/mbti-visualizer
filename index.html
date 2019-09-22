@@ -18,67 +18,67 @@
 
 		<div id="preferences-overview">
 			<div class="hflex bordered">
-				<div>
+				<div id="preference-I">
 					<h3>I</h3>
 				</div>
 
-				<div>
+				<div id="preference-E">
 					<h3>E</h3>
 				</div>
 			</div>
 
 			<div class="hflex bordered">
-				<div>
+				<div id="preference-S">
 					<h3>S</h3>
 				</div>
 
-				<div>
+				<div id="preference-N">
 					<h3>N</h3>
 				</div>
 			</div>
 
 
 			<div class="hflex bordered">
-				<div>
+				<div id="preference-T">
 					<h3>T</h3>
 				</div>
 
-				<div>
+				<div id="preference-F">
 					<h3>F</h3>
 				</div>
 			</div>
 
 			<div class="hflex bordered">
-				<div>
+				<div id="preference-J">
 					<h3>J</h3>
 				</div>
 
-				<div>
+				<div id="preference-P">
 					<h3>P</h3>
 				</div>
 			</div>
 		</div>
 
 		<div id="functions-overview">
-			<p class="center">Primary: <span class="selected-primary">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-			<p class="center">Secondary: <span class="selected-secondary">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="center">Primary: <span class="selected-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="center">Secondary: <span class="selected-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 			<div class="hflex">
 				<div class="hflex bordered">
-					<div id="function-Si" ng-click="makeSelection($event)">
+					<div id="function-Si" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>S(i)</h3>
 					</div>
 
-					<div id="function-Se" ng-click="makeSelection($event)">
+					<div id="function-Se" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>S(e)</h3>
 					</div>
 				</div>
 
 				<div class="hflex bordered">
-					<div id="function-Ni" ng-click="makeSelection($event)">
+					<div id="function-Ni" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>N(i)</h3>
 					</div>
 
-					<div id="function-Ne" ng-click="makeSelection($event)">
+					<div id="function-Ne" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>N(e)</h3>
 					</div>
 				</div>
@@ -87,21 +87,21 @@
 			<div class="hflex">
 
 				<div class="hflex bordered">
-					<div id="function-Ti" ng-click="makeSelection($event)">
+					<div id="function-Ti" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>T(i)</h3>
 					</div>
 
-					<div id="function-Te" ng-click="makeSelection($event)">
+					<div id="function-Te" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>T(e)</h3>
 					</div>
 				</div>
 
 				<div class="hflex bordered">
-					<div id="function-Fi" ng-click="makeSelection($event)">
+					<div id="function-Fi" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>F(i)</h3>
 					</div>
 
-					<div id="function-Fe" ng-click="makeSelection($event)">
+					<div id="function-Fe" class="overview-function-selector" ng-click="makeSelection($event)">
 						<h3>F(e)</h3>
 					</div>
 				</div>
@@ -112,8 +112,20 @@
 		<div id="ordering-overview">
 			<ol>
 				<!-- track by $index used to circumvent duplication error -->
-				<li class="function-list-item" ng-repeat="item in functions track by $index">
-					<p>{{ item }}</p>
+				<li class="function-list-item selected-primary">
+					<p>{{ functions[0] }}</p>
+				</li>
+
+				<li class="function-list-item selected-primary">
+					<p>{{ functions[1] }}</p>
+				</li>
+
+				<li class="function-list-item selected-secondary">
+					<p>{{ functions[2] }}</p>
+				</li>
+
+				<li class="function-list-item selected-secondary">
+					<p>{{ functions[3] }}</p>
 				</li>
 			</ol>
 		</div>

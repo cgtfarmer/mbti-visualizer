@@ -164,6 +164,17 @@ app.controller('myCtrl', function($scope, $http) {
 				}
 			}
 		}
+
+		for(let i = 0; i < $scope.preferences.length; i++) {
+			let f = $scope.preferences[i];
+			if(f != "") {
+				let selector1 = "#preference-help-" + f;
+				let selector2 = "#preference-" + f;
+				$(selector1).addClass("selected-secondary");
+				$(selector2).addClass("selected-secondary");
+			}
+		}
+
 		return;
 	}
 

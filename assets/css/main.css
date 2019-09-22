@@ -165,13 +165,7 @@ input[type="text"] {
 	/* max-width: 450px; */
 	border: 2px solid #000000;
 	border-radius: 4px;
-    transition: 0.3s;
 	background-color: #888888;
-}
-
-.preference-card:hover {
-	/* background-color: #00cc00; */
-	cursor: pointer;
 }
 
 .function-card {
@@ -184,6 +178,10 @@ input[type="text"] {
 
 .function-card:hover {
 	/* background-color: #00cc00; */
+	cursor: pointer;
+}
+
+.overview-function-selector:hover {
 	cursor: pointer;
 }
 
@@ -206,6 +204,7 @@ li {
 
 .function-list-item {
 	min-height: 1em;
+	max-width: 3em;
 }
 
 @media only screen and (min-width: 853px) {

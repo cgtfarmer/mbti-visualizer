@@ -85,6 +85,22 @@ app.controller('myCtrl', function($scope, $http) {
 		}
 
 		console.log($scope.functions);
+		$scope.updateUiState();
+		return;
+	}
+
+	$scope.updateUiState = function() {
+		$(".selected").removeClass("selected");
+
+		for(let f of $scope.functions) {
+			if(f != "") {
+				let selector1 = "#function-help-" + f;
+				$(selector1).addClass("selected");
+
+				let selector2 = "#function-" + f;
+				$(selector2).addClass("selected");
+			}
+		}
 		return;
 	}
 

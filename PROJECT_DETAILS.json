@@ -1,0 +1,32 @@
+{
+	"title" : "MBTI Visualizer", 
+	"date" : "2019-09", 
+	"revenue" : "No", 
+	"status" : "Complete", 
+	"summary" : "The purpose of this web application is to provide an efficient method of explaining the MBTI system and how the 3 core components interact with each other: the cognitive preferences, the cognitive functions, and the order of the cognitive functions",
+	"description" : "Different data structures are utilized in the JavaScript to model the behaviors and constraints of the MBTI system. AngularJS then binds the user selections to those data structures to validate/process the selections. Uses jQuery mainly for accessing/modifying CSS classes on DOM elements. Uses CSS grid and media queries for responsiveness", 
+	"future-work" : [
+						"Improve aesthetics", 
+						"Consider making a guided selection application which allows the user to make selections on any of the 3 core components of the MBTI system. This was avoided due to scope concerns regarding complexity"
+				    ],
+	"live-link" : "http://projects.christianfarmer.org/software/informational-sites/mbti-visualizer", 
+	"demonstration-link" : "Contact me", 
+	"repository-link" : "Contact me", 
+	"supported-platforms" : ["Windows", "macOS", "Linux", "Android", "iOS"],
+	"supported-browsers" : ["Mozilla Firefox", "Safari"], 
+	"version-control" : "Git", 
+	"development-methods" : "None", 
+	"team-size" : "1", 
+	"lines-of-code" : "640", 
+	"user-interface" : "Web", 
+	"keywords" : ["Education", "Web Application", "UI/UX", "Constraint Processing", "Data Structures", "Algorithms"], 
+	"languages" : ["HTML", "CSS", "JavaScript", "JSON"],
+	"libraries" : [
+					"JavaScript: jQuery, AngularJS"
+				  ],
+	"external-programs" : "None", 
+	"development-os" : "Linux: Arch", 
+	"deployment-os" : "Linux: Debian", 
+	"web-server" : "Apache", 
+	"databases" : ["None"]
+}

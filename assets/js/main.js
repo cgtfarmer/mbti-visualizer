@@ -1,20 +1,8 @@
 
-var app = angular.module('myApp', []);
 
 var functionGroups = {
 	"perceiving": ["Si", "Se", "Ni", "Ne"],
 	"judging": ["Ti", "Te", "Fi", "Fe"]
-}
-
-var preferenceImplications = {
-	"Si": ["S", "J"],
-	"Se": ["S", "P"],
-	"Ni": ["N", "J"],
-	"Ne": ["N", "P"],
-	"Ti": ["T", "P"],
-	"Te": ["T", "J"],
-	"Fi": ["F", "P"],
-	"Fe": ["F", "J"]
 }
 
 var couples = {
@@ -33,6 +21,8 @@ var selectionNumber = 1;
 var firstSelectionType = "";
 var firstSelectionOrientation = "";
 
+var app = angular.module('myApp', []);
+
 app.controller('myCtrl', function($scope, $http) {
 	$scope.preferences = Array.from(EMPTY_SELECTION);
 
@@ -48,7 +38,7 @@ app.controller('myCtrl', function($scope, $http) {
 			}
 		}
 	).then(function(response) {
-		console.log(response);
+		// console.log(response);
 		$scope.data = response.data;
 		return;
 	});
@@ -56,7 +46,7 @@ app.controller('myCtrl', function($scope, $http) {
 	$scope.makeSelection = function(event) {
 		var selection = event.currentTarget.id
 		selection = selection.slice(selection.length - 2);
-		console.log(selection);
+		// console.log(selection);
 
 		// If the function is not currently selected
 		if($scope.functions.indexOf(selection) == -1) {
@@ -94,9 +84,9 @@ app.controller('myCtrl', function($scope, $http) {
 			}
 		}
 
-		console.log("Functions:");
-		console.log($scope.functions);
-		console.log("Printed functions");
+		// console.log("Functions:");
+		// console.log($scope.functions);
+		// console.log("Printed functions");
 
 		$scope.updatePreferences(); // TODO: Breaking here?
 		$scope.updateUiState();
@@ -107,7 +97,7 @@ app.controller('myCtrl', function($scope, $http) {
 		$scope.preferences = Array.from(EMPTY_SELECTION);
 
 		var firstFunction = $scope.functions[0];
-		console.log(firstFunction);
+		// console.log(firstFunction);
 
 		if(firstFunction == "") {
 			return;
@@ -137,12 +127,12 @@ app.controller('myCtrl', function($scope, $http) {
 		var secondFunction = $scope.functions[1];
 
 		if(secondFunction != "") {
-			console.log(secondFunction);
+			// console.log(secondFunction);
 			$scope.preferences[2] = secondFunction[0];
 		}
 
-		console.log("Preferences:");
-		console.log($scope.preferences);
+		// console.log("Preferences:");
+		// console.log($scope.preferences);
 		return;
 	}
 

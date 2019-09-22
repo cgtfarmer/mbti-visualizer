@@ -109,7 +109,7 @@
 
 		<div id="ordering-overview">
 			<ol>
-				<li ng-repeat="item in functionOrder">
+				<li ng-repeat="item in functions">
 					<p>{{ item }}</p>
 				</li>
 			</ol>
@@ -121,7 +121,7 @@
 			<h2>Cognitive Preferences</h2>
 		</header>
 
-		<div id="preference-{{ preference.abbreviation }}" class="preference-card" ng-repeat="preference in data.cognitivePreferences" ng-click="updateState($event)">
+		<div id="preference-{{ preference.abbreviation }}" class="preference-card" ng-repeat="preference in data.cognitivePreferences">
 			<h2>{{ preference.name }} - ({{ preference.abbreviation }})</h2>
 			<ul>
 				<li ng-repeat="trait in preference.traits">
@@ -134,7 +134,7 @@
 			<h2>Cognitive Functions</h2>
 		</header>
 
-		<div id="function-{{ function.abbreviationClean }}" class="function-card" ng-repeat="function in data.cognitiveFunctions" ng-click="updateState($event)">
+		<div id="function-{{ function.abbreviationClean }}" class="function-card" ng-repeat="function in data.cognitiveFunctions" ng-click="makeSelection($event)">
 			<h2>{{ function.name }} - {{ function.abbreviation }}</h2>
 			<ul>
 				<!-- <li><p>{{ function.preferences }}</p></li> -->

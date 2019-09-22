@@ -25,3 +25,19 @@ WAIT!! Make every choice propagate through the whole thing, so the whole system 
 
 2. Get the UI clicks and whatnot modifying those scope variables appropriately (handling the constraints and whatnot)
 
+
+# =============================================================================
+
+Okay, so here's the deal
+
+either I can split things up and run a validation check at the end and leave it up to the user to figure out what's wrong
+
+or I can limit the user to selecting only the cognitive functions
+The order that they select them in will indicate the 1-4 ranking of the cognitive function ordering
+	Selecting Ni first will imply 1 = Ni, 4 = Se
+	Selecting Te second will imply 2 = Te, 3 = Fi
+	These 4 functions in this order imply the INTJ type
+
+# --------------------------------------
+
+

@@ -84,12 +84,13 @@ input[type="text"] {
 #page-help { grid-area: help; }
 */
 
+#page-help { grid-area: help; }
 #page-footer { grid-area: footer; }
 
 #page-grid {
 	padding: 5px;
 	display: grid;
-	grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+	grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
 	grid-template-columns: auto auto auto auto;
 	grid-template-areas:
 		'header header header header'
@@ -103,6 +104,7 @@ input[type="text"] {
 		'cfBanner cfBanner cfBanner cfBanner'
 		'SJ SP NJ NP'
 		'TP TJ FP FJ'
+		'help help help help'
 		'footer footer footer footer';
 }
 

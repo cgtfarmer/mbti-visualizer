@@ -187,8 +187,16 @@ input[type="text"] {
 	cursor: pointer;
 }
 
-.selected {
+.selected-primary {
+	background-color: #00ffff;
+}
+
+.selected-secondary {
 	background-color: #00ff00;
+}
+
+.center {
+	text-align: center;
 }
 
 li {

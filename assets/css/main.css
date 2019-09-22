@@ -68,21 +68,15 @@ input[type="text"] {
 #preference-help-J { grid-area: J; }
 #preference-help-P { grid-area: P; }
 
-
 #cognitive-functions-banner { grid-area: cfBanner; }
-#function-help-SJ { grid-area: SJ; }
-#function-help-SP { grid-area: SP; }
-#function-help-NJ { grid-area: NJ; }
-#function-help-NP { grid-area: NP; }
-#function-help-TP { grid-area: TP; }
-#function-help-TJ { grid-area: TJ; }
-#function-help-FP { grid-area: FP; }
-#function-help-FJ { grid-area: FJ; }
-
-/* 
-#page-ordering { grid-area: ordering; }
-#page-help { grid-area: help; }
-*/
+#function-help-Si { grid-area: Si; }
+#function-help-Se { grid-area: Se; }
+#function-help-Ni { grid-area: Ni; }
+#function-help-Ne { grid-area: Ne; }
+#function-help-Ti { grid-area: Ti; }
+#function-help-Te { grid-area: Te; }
+#function-help-Fi { grid-area: Fi; }
+#function-help-Fe { grid-area: Fe; }
 
 #page-help { grid-area: help; }
 #page-footer { grid-area: footer; }
@@ -90,22 +84,26 @@ input[type="text"] {
 #page-grid {
 	padding: 5px;
 	display: grid;
-	grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-	grid-template-columns: auto auto auto auto;
+	grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+	grid-template-columns: auto auto;
 	grid-template-areas:
-		'header header header header'
-		'oBanner oBanner oBanner oBanner'
-		'pOverview fOverview fOverview oOverview'
-		'cpBanner cpBanner cpBanner cpBanner'
-		'I I E E'
-		'S S N N'
-		'T T F F'
-		'J J P P'
-		'cfBanner cfBanner cfBanner cfBanner'
-		'SJ SP NJ NP'
-		'TP TJ FP FJ'
-		'help help help help'
-		'footer footer footer footer';
+		'header header'
+		'oBanner oBanner'
+		'oOverview oOverview'
+		'fOverview fOverview'
+		'pOverview pOverview'
+		'cpBanner cpBanner'
+		'I E'
+		'S N'
+		'T F'
+		'J P'
+		'cfBanner cfBanner'
+		'Si Se'
+		'Ni Ne'
+		'Ti Te'
+		'Fi Fe'
+		'help help'
+		'footer footer';
 }
 
 /* #page-grid {
@@ -136,6 +134,7 @@ input[type="text"] {
 }
 
 #page-help {
+	margin-top: 15px;
 	text-align: center;
 }
 
@@ -224,21 +223,39 @@ li {
 	margin-top: 10px;
 }
 
+#ordering-overview {
+	margin: 20px auto;
+	margin-top: 0px;
+	max-width: 6em;
+}
+
 @media only screen and (min-width: 853px) {
 
-	/* #page-grid {
+	#page-grid {
 		padding: 5px;
 		display: grid;
-		grid-template-rows: auto auto auto auto auto auto;
+		grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
 		grid-template-columns: auto auto auto auto;
 		grid-template-areas:
-			'header' 'header' 'header' 'header',
-			'I' 'I' 'E' 'E',
-			'S' 'S' 'N' 'N',
-			'T' 'T' 'F' 'F',
-			'J' 'J' 'P' 'P',
-			'footer' 'footer' 'footer' 'footer';
-	} */
+			'header header header header'
+			'oBanner oBanner oBanner oBanner'
+			'pOverview fOverview fOverview oOverview'
+			'cpBanner cpBanner cpBanner cpBanner'
+			'I I E E'
+			'S S N N'
+			'T T F F'
+			'J J P P'
+			'cfBanner cfBanner cfBanner cfBanner'
+			'Si Se Ni Ne'
+			'Ti Te Fi Fe'
+			'help help help help'
+			'footer footer footer footer';
+	}
+
+	#page-help {
+		margin: 0px 15%;
+		margin-top: 15px;
+	}
 
 	/*.section-body {
 		border: 2px solid #000000;

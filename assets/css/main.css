@@ -161,19 +161,16 @@ input[type="text"] {
 	border-radius: 4px;
 }
 
-.preference-card {
-	/* max-width: 450px; */
+.preference-card,
+.function-card {
+	padding: 3px;
 	border: 2px solid #000000;
 	border-radius: 4px;
 	background-color: #888888;
 }
 
 .function-card {
-	/*max-width: 300px;*/
-	border: 2px solid #000000;
-	border-radius: 4px;
     transition: 0.3s;
-	background-color: #888888;
 }
 
 .function-card:hover {
@@ -205,6 +202,24 @@ li {
 .function-list-item {
 	min-height: 1em;
 	max-width: 3em;
+}
+
+#page-header {
+	margin-top: 5px;
+}
+
+#overview-banner,
+#cognitive-preferences-banner,
+#cognitive-functions-banner {
+	margin-top: 30px;
+	padding: 5px;
+	background-color: #888888;
+	border: 4px solid #000000;
+	border-radius: 4px;
+}
+
+#overview-banner {
+	margin-top: 10px;
 }
 
 @media only screen and (min-width: 853px) {
